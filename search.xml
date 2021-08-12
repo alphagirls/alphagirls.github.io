@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>数组常用操作（ES6）</title>
+      <link href="/2021/08/03/%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%EF%BC%88ES6%EF%BC%89/"/>
+      <url>/2021/08/03/%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%EF%BC%88ES6%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<small>    <hr>    <h6>        <mark> concat</mark>    </h6>    连接两个或多个数组    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1=[<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>];</span><br><span class="line"><span class="keyword">var</span> arr2=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"><span class="keyword">var</span> arr3=arr1.concat(arr2);</span><br></pre></td></tr></table></figure>    <hr>    <h6>        <mark> join</mark>    </h6>    把数组中所有元素放入字符串    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.join());<span class="comment">//2,3,4</span></span><br></pre></td></tr></table></figure>    <hr>    <h6>        <mark> slice</mark>    </h6>    返回新数组，包含从start到end（不包含）的所有元素    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.slice(<span class="number">0</span>,<span class="number">3</span>));<span class="comment">//[2,3,4]</span></span><br></pre></td></tr></table></figure>    <hr>    <h6>        <mark> splice</mark>    </h6>    删除从index开始的0个或多个元素，并从参数列表中声明一个或多个值替换    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="number">9</span>));<span class="comment">//[]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//[5,9,6,7,8]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.slice(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));<span class="comment">//[6]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//[5,6,7,8]</span></span><br></pre></td></tr></table></figure>    <hr>    <h6>        <mark> indexOf 和 lastIndexOf</mark>    </h6>    接受查找的值和查找起始位置两个参数    不存在返回-1，存在返回位置，indeOf从前到后查找，lastIndexOf从后到前查找    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">2</span>,<span class="number">9</span>,<span class="number">9</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.indexOf(<span class="number">2</span>));<span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.indexOf(<span class="number">7</span>));<span class="comment">// -1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.indexOf(<span class="number">9</span>));<span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.lastIndexOf(<span class="number">2</span>));<span class="comment">//3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.lastIndexOf(<span class="number">7</span>));<span class="comment">//-1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.lastIndexOf(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">//3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.lastIndexOf(<span class="number">2</span>,<span class="number">2</span>));<span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.lastIndexOf(<span class="number">2</span>,-<span class="number">2</span>));<span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.lastIndexOf(<span class="number">2</span>,-<span class="number">1</span>));<span class="comment">//3</span></span><br></pre></td></tr></table></figure>    <hr>    <h6>        <mark> every</mark>    </h6>    对数组每一项都运行给定函数，若每一项都为true，则返回true    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span> (<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> element &lt; <span class="number">10</span>; &#125; <span class="keyword">var</span> arr=[<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">1</span>]; <span class="built_in">console</span>.log(arr.every(isBigEnough)); <span class="string">``</span><span class="string">` &lt;hr&gt;</span></span><br><span class="line"><span class="string">    &lt;h6&gt;</span></span><br><span class="line"><span class="string">        &lt;mark&gt; some&lt;/mark&gt;</span></span><br><span class="line"><span class="string">    &lt;/h6&gt;</span></span><br><span class="line"><span class="string">    对数组每一项都运行给定函数，任意一项返回true，则返回true</span></span><br><span class="line"><span class="string">    `</span><span class="string">``</span>Javascript</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span> (<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> element &lt; <span class="number">10</span>; &#125; <span class="keyword">var</span> arr=[<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">13</span>,<span class="number">18</span>,<span class="number">1</span>]; <span class="built_in">console</span>.log(arr.some(isBigEnough)); <span class="string">``</span><span class="string">` &lt;hr&gt;</span></span><br><span class="line"><span class="string">        &lt;h6&gt;</span></span><br><span class="line"><span class="string">            &lt;mark&gt; filter&lt;/mark&gt;</span></span><br><span class="line"><span class="string">        &lt;/h6&gt;</span></span><br><span class="line"><span class="string">        对每一项运行给定函数，返回结果为true的项组成数组</span></span><br><span class="line"><span class="string">        `</span><span class="string">``</span>Javascript</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span> (<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> element &lt; <span class="number">10</span>; &#125; <span class="keyword">var</span> arr=[<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">13</span>,<span class="number">18</span>,<span class="number">1</span>]; <span class="built_in">console</span>.log(arr.filter(isBigEnough)); <span class="string">``</span><span class="string">` &lt;hr&gt;</span></span><br><span class="line"><span class="string">            &lt;h6&gt;</span></span><br><span class="line"><span class="string">                &lt;mark&gt; map&lt;/mark&gt;</span></span><br><span class="line"><span class="string">            &lt;/h6&gt;</span></span><br><span class="line"><span class="string">            对每一项都运行给定函数，返回每次调用函数的结果组成新数组</span></span><br><span class="line"><span class="string">            `</span><span class="string">``</span>Javascript</span><br><span class="line">            <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> doubles = arr.map(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> x * <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="built_in">console</span>.log(arr);<span class="comment">//[1,5,10,15]</span></span><br><span class="line"></span><br><span class="line">            <span class="built_in">console</span>.log(doubles);<span class="comment">//[2,10,20,30]</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>                <hr>                <h6>                    <mark> find</mark>                </h6>                传入回调函数，找到数组中符合当前搜索规则的第一个元素，返回并终止搜索                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">&#x27;2&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;4&#x27;</span>, <span class="number">5</span>, <span class="string">&#x27;1&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;3&#x27;</span>, <span class="number">4</span>, <span class="string">&#x27;5&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.find(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">&quot;number&quot;</span>));<span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.find(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">&quot;string&quot;</span>));<span class="comment">//2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>                <hr>                <h6>                    <mark> findeIndex</mark>                </h6>                传入回调函数，找到数组符合当前搜索规则的第一个元素并返回下标                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">&#x27;2&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;4&#x27;</span>, <span class="number">5</span>, <span class="string">&#x27;1&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;3&#x27;</span>, <span class="number">4</span>, <span class="string">&#x27;5&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.findIndex(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">&quot;number&quot;</span>));<span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.findIndex(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">&quot;string&quot;</span>));<span class="comment">//1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>                <hr>                <h6>                    <mark> fill</mark>                </h6>                用新元素替换数组内元素，可以指定替换下标范围                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">arr.fill(value,start,end)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.fill(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));<span class="comment">//[2,4,1]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>                <hr>                <h6>                    <mark>copyWithin</mark>                </h6>                选择数组某个下标，从该位置赋值元素，默认从0开始，也可以指定复制元素范围                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// arr.copyWithin(target, start, end);</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.copyWithin(<span class="number">4</span>));<span class="comment">//[1,2,3,4,1,2]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.copyWithin(<span class="number">3</span>,<span class="number">1</span>));<span class="comment">//[1,2,3,2,3,4]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.copyWithin(<span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>));<span class="comment">//[1,2,3,3,2,4]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>                <hr>                <h6>                    <mark>entries</mark>                </h6>                返回迭代器：返回键值对                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> v <span class="keyword">of</span> arr.entries()) &#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(v);<span class="comment">//[0,&#x27;a&#x27;] [1,&#x27;b&#x27;] [2,&#x27;c&#x27;]</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>                <hr>                <h6>                    <mark> includes</mark>                </h6>                判断数组中是否存在该元素，参数：查找的值、起始位置                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.includes(<span class="number">2</span>));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.includes(<span class="number">4</span>));<span class="comment">//false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></small>]]></content>
+      
+      
+      <categories>
+          
+          <category> Javascript高级 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组常用操作（包含es6） </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小记2</title>
+      <link href="/2021/08/03/%E5%B0%8F%E8%AE%B02/"/>
+      <url>/2021/08/03/%E5%B0%8F%E8%AE%B02/</url>
+      
+        <content type="html"><![CDATA[<small>    最近老是萌生想买房的冲动，其实这个事情也是在我很早的计划内了，    就很想要一个属于自己的小房子🏠，最近有刷一些小红书，看到一些说    在普通的城市30-40w付首付，每月月供3000，现在不努力真的连个像样的家都没有。    加油！</small>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每周小记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小记2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小记</title>
+      <link href="/2021/08/02/%E5%B0%8F%E8%AE%B0/"/>
+      <url>/2021/08/02/%E5%B0%8F%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<small>    越来越觉得，你想要做成什么事情或者想要得到什么东西，    你就按部就班做自己该做的，安静点也用心点，渴求别那么强烈    ，慢慢地一段时间后，水到渠成是一件非常自然的事情，但你要是特别心急特别用心手忙脚乱，    最后往往什么都得不到还搞得一团糟。<img src="/images/bg14.png" class="imgs" alt="" loading="lazy">           <br>     真的生活就是这样,特别用力就会特别容易疲惫，当你有所执念的事情，发自内心不在意时好像一切都会如约而至，当你    真的放心之后会发现一切都在朝着你期待的方向发展，所以慢慢来吧，一切都会变好的。    <br>    <footer>       👩‍🦳 2021.8.2    </footer></small>]]></content>
+      
+      
+      <categories>
+          
+          <category> 每周小记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TypeScript_study</title>
+      <link href="/2021/07/27/TypeScript-study/"/>
+      <url>/2021/07/27/TypeScript-study/</url>
+      
+        <content type="html"><![CDATA[<small>    <h6>强类型和弱类型</h6>    <p>        <strong>区别：</strong>    </p>    <ul>        <li>强类型不允许任意的数据隐式类型转换，而弱类型可以。            </li>        <li> 变量类型允许随时改变的特点不是强弱类型的差异。</li>    </ul>            <h6>类型系统</h6>    <p>        <strong>静态类型和动态类型</strong>    </p>    <ul>        <li>是否允许中途改变变量数据的类型。            </li>        <li> javascript是弱类型、动态语言。</li>    </ul>    <h6>        Javascript的缺点    </h6>    <p>        弱类型、动态类型的语言特点瞬间成为了短板。        <p>1.有些错误要等到代码执行了才会发现。</p>        <p>2.类型不确定有可能会改变某些函数的功能。</p>    </p>    </small>]]></content>
+      
+      
+      <categories>
+          
+          <category> TypeScript基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TypeScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Javascript高级</title>
+      <link href="/2021/07/23/Javascript%E9%AB%98%E7%BA%A7/"/>
+      <url>/2021/07/23/Javascript%E9%AB%98%E7%BA%A7/</url>
+      
+        <content type="html"><![CDATA[封装和信息隐藏  1.两者之间的关系？    信息隐藏是目的，封装是为了达到这个目的的技术。  2.封装是什么？    封装就是对对象的内部数据表现形式和实现细节进行隐藏。    在JavaScript中使用闭包的概念来创建只允许从对象内部访问的方法和属性。  3.创建对象的基本模式？        ]]></content>
+      
+      
+      <categories>
+          
+          <category> Javascript设计模式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2021/07/22/startPaper/"/>
+      <url>/2021/07/22/startPaper/</url>
+      
+        <content type="html"><![CDATA[<h5>前言</h5><small size="2">   <p style="text-indent: 2em;">      身体其实是有记忆的。某个低谷时候经常听的歌，时隔很久又偶然听到，还是会唤醒已经沉睡在身体里的记忆，下子把你拉回当初的那种心情。虽然你很可能已经忘了。某个季节发生让你印象深刻的事情。时隔多年你的记忆已经不那么清晰了，但只要闻到空气中那个季节的味道，那种氤氲在空气里的感觉。   </p>   <img src="/images/bg17.png" style="width:90%;height: 50%;" alt="" loading="lazy">   <h6>小事记</h6>   <p style="text-indent: 2em;">      自接触前端这一领域以来，就一直很想有一个属于自己的线上博客，前不久无意间在B站上看见这样一个教程      ，经过这些天的努力、Alphagirl`s博客终于搭建起来了。      当然很多的东西还会进行逐步的完善的修改，以后的日常学习、心情分享都会在这上面更新。      终于有一个属于自己独立的小空间啦~   </p>   <p>你一直在路上!!!</p></small>]]></content>
+      
+      
+      <categories>
+          
+          <category> alphagirl`s碎碎念 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MYblog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
